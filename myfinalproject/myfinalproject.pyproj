@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>c584c365-c809-4e49-8d4d-5a47045779bd</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>myfinalproject</Name>
+    <RootNamespace>myfinalproject</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="myfinalproject\Models\Forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runserver.py" />
+    <Compile Include="myfinalproject\__init__.py" />
+    <Compile Include="myfinalproject\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="myfinalproject\" />
+    <Folder Include="myfinalproject\Models\" />
+    <Folder Include="myfinalproject\static\" />
+    <Folder Include="myfinalproject\static\content\" />
+    <Folder Include="myfinalproject\static\fonts\" />
+    <Folder Include="myfinalproject\static\data\" />
+    <Folder Include="myfinalproject\static\images\" />
+    <Folder Include="myfinalproject\static\scripts\" />
+    <Folder Include="myfinalproject\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="myfinalproject\static\data\nba_team_stats_00_to_18.csv" />
+    <Content Include="myfinalproject\static\images\0V8FfFFU_400x400.jpg" />
+    <Content Include="myfinalproject\static\images\D2508AF2-66CF-495D-A393-7F239A68E3B4-1024x683.jpeg" />
+    <Content Include="myfinalproject\static\images\download.jpg" />
+    <Content Include="myfinalproject\static\images\nbalogo2.png" />
+    <Content Include="myfinalproject\static\images\purple-applied-icon-wall-decals-nbop1401-64_1000.jpg" />
+    <Content Include="myfinalproject\static\images\red-applied-icon-wall-decals-nbop0603-64_1000.jpg" />
+    <Content Include="myfinalproject\static\images\Screen-Shot-2020-01-25-at-10.52.39-AM.png" />
+    <Content Include="myfinalproject\templates\data_model.html" />
+    <Content Include="myfinalproject\templates\home.html" />
+    <Content Include="myfinalproject\templates\register.html" />
+    <Content Include="myfinalproject\templates\WebPage1.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="myfinalproject\static\content\bootstrap.css" />
+    <Content Include="myfinalproject\static\content\bootstrap.min.css" />
+    <Content Include="myfinalproject\static\content\site.css" />
+    <Content Include="myfinalproject\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="myfinalproject\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="myfinalproject\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="myfinalproject\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="myfinalproject\static\scripts\bootstrap.js" />
+    <Content Include="myfinalproject\static\scripts\bootstrap.min.js" />
+    <Content Include="myfinalproject\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="myfinalproject\static\scripts\jquery-1.10.2.js" />
+    <Content Include="myfinalproject\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="myfinalproject\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="myfinalproject\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="myfinalproject\static\scripts\jquery.validate.js" />
+    <Content Include="myfinalproject\static\scripts\jquery.validate.min.js" />
+    <Content Include="myfinalproject\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="myfinalproject\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="myfinalproject\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="myfinalproject\static\scripts\respond.js" />
+    <Content Include="myfinalproject\static\scripts\respond.min.js" />
+    <Content Include="myfinalproject\static\scripts\_references.js" />
+    <Content Include="myfinalproject\templates\about.html" />
+    <Content Include="myfinalproject\templates\contact.html" />
+    <Content Include="myfinalproject\templates\index.html" />
+    <Content Include="myfinalproject\templates\layout.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
