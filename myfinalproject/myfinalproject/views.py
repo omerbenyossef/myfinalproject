@@ -7,6 +7,7 @@ from flask import render_template
 from myfinalproject import app
 from myfinalproject.Models.LocalDatabaseRoutines import create_LocalDatabaseServiceRoutines
 
+app.config['SECRET_KEY'] = 'All You Need Is Love Ta ta ta ta ta'
 
 
 
