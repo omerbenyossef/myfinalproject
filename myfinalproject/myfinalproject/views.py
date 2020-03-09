@@ -60,8 +60,7 @@ def home():
            img_american_flag = '/static/images/lebrondavis.jpg',
            img_ethereum = '/static/images/pircegarrnet.jpg',
            img_lebron = '/static/images/lebronwade.jpg',
-         message='My home page.'
-
+         message='My home page.'   
 
     )
 
