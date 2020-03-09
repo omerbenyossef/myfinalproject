@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="he">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
+
 
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -19,15 +19,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">Omer Ben Yossef's Data Project</a>
+                <a href="/" class="navbar-brand" color="snow">Omer Ben Yossef's Data Project</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('data_model') }}">data model</a></li>
-                    <li><a href="{{ url_for('register') }}">register</a></li>
+                    <li><a color="snow" href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('about') }}">about</a></li>
                     <li><a href="{{ url_for('contact') }}">contact</a></li>
+                    <li><a href="{{ url_for('data_model') }}">data model</a></li>
+                    <li><a href="{{ url_for('Register') }}">register</a></li>
+                  
                 </ul>
             </div>
         </div>
@@ -37,7 +38,7 @@
         {% block content %}{% endblock %}
         <hr />
         <footer>
-            <p>&copy; {{ year }} - My Flask Application</p>
+            <p>&copy; {{ year }} - Omer Ben Yossef</p>
         </footer>
     </div>
 

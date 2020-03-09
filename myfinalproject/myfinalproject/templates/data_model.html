@@ -1,37 +1,34 @@
-﻿{% extends "layout.html" %}
-
-{% extends "layout.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+﻿﻿{% extends "layout.html" %}
 
 {% block content %}
 
-    <div class="row my-grid-borders">
-        <div class="col-md-5 my-grid-borders">
-            <form method="post">
-                {{ form1.csrf_token }}
-                <input class="btn btn-success" type="submit" name="action" value="Expand">
-            </form>
-        </div>
-        <div class="col-md-5 my-grid-borders">
-            <form method="post">
-                {{ form2.csrf_token }}
-                <input class="btn btn-danger" type="submit" name="action" value="Collapse">
-            </form>
-        </div>
-        <div class="row my-grid-borders">
-            {{ raw_data_table | safe}}
-        </div>
+<h2 class="heb">בדף זה נתאר את קבצי הדאטה ונפנה אליהם</h2>
+<h3></h3>
+
+<div class="row my-grid-borders">
+    <p> </p>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_one }} alt='Missing'></div>
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_two }} alt='Missing'></div>
+   
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders"><a href="{{ url_for('nba') }}">NBA Dataset</a></div>
+    <div cslas="col-md-5 my-grid-borders">
+        <p ckass="heb">דף הדאטא של קבוצות הכדורסל</p>
+    </div>
+
+</div>
+
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders"><a href="{{ url_for('nbafinals') }}">NBA Dataset</a></div>
+    <div cslas="col-md-5 my-grid-borders">
+        <p ckass="heb">דף הדאטא של קבוצות הכדורסל</p>
+    </div>
+
+</div>
 
 
-        {% block content %}
 
-        <h2>{{ title }}.</h2>
-        <h3>{{ message }}</h3>
-        <address>
-
-        </address>
-
-
-        <p>Use this area to provide additional information.</p>
-
-        {% endblock %}
+{% endblock %}

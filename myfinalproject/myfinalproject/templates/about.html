@@ -2,13 +2,50 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
-<address>
-
-</address>
 
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <img class="contain" src={{ img_tichonet }} alt='Missing'>
+</div>
+<div class="row">
 
-{% endblock %}
+    <h1 style="text-align:center"> About The Project</h1>
+
+    <p> Name: Omer Ben Yossef</p>
+
+    <p> Class: 10th grade</p>
+    <p> school: Tichonet </p>
+    <p> This project is about NBA teams, it shows the stats, like points per game or block of all NBA teams between year 2000 to 2018. </p>
+
+    <p> <strong> The project combines two main topics:</strong></p>
+
+    <p> * Data Science </p>
+    <p> * Programming in the Web Environment </p>
+
+    <p> As part of the project I located one dataset about nba teams' stats, I intend to build a website that allows for access to the database, access to the data analysis and presentation of it conveniently to the user. The site will allow the user to research and extract information from the database.  </p>
+    <p> <strong> the project will contain the next technological components: </strong> </p>
+    <p>  *  Python language </p>
+    <p> * Pandas Library </p>
+    <p> * flask as a As infrastructure for the project </p>
+
+
+    <div class="row my-grid-borders">
+        <table class="table table-striped heb">
+            <tbody>
+                <tr>
+                    <td dir="rtl"><a class="btn btn-primary heb" href="https://docs.google.com/document/d/10HP5H4QWLxd0Xp5Cj0yvgrC_WPwpBxE90Q3flUsvd3w" target="_blank">Go &raquo;</a></td>
+                    <td dir="ltr">Link to the project's specification document:</td>
+
+                </tr>
+                <tr>
+                    <td dir="rtl"><a class="btn btn-primary heb" href="https://github.com/omerbenyossef/myfinalproject" target="_blank">Go &raquo;</a></td>
+                    <td dir="ltr">Link to the project's GitHub code:</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+    {% endblock %}

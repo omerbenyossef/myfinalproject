@@ -41,7 +41,45 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+.my-grid-borders {
+    border-style: none;
+    border-color: green;
+    padding: 10px;
+    margin: 10px;
+}
+
+.contain {
+    width: 100%;
+    object-fit: contain;
+}
+
+.navbar-custom {
+    background-color: firebrick;
+    color: snow;
+}
+
+.navbar-custom1 {
+    color: snow;
+}
+
+.jumbotron-hebrew-calibri {
+    font-family: Tahoma, Geneva, sans-serif;
+    direction: rtl;
+}
+
 .heb {
     font-family: Tahoma, Geneva, sans-serif;
     direction: rtl;
+}
+
+.mfp_background_ivory {
+    background-color: ivory;
+}
+
+.mfp_background_gainsboro {
+    background-color: gainsboro;
+}
+
+.mfp_background_sandybrown {
+    background-color: sandybrown;
 }

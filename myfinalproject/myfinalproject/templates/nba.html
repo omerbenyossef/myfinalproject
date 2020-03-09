@@ -1,0 +1,159 @@
+﻿{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="row my-grid-borders">
+    <p> Here I am going to put a general explanation about the Data</p>
+</div>
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_one }} height="100" width="130"></div>
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_two }} height="100" width="130"></div>
+<div class="row my-grid-borders">
+    <h2>NBA's Dataset Fields</h2>
+</div>
+<div class="row my-grid-borders">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NBA Team</td>
+                <td class="heb"> שם הקבוצה</td>
+            </tr>
+            <tr>
+                <td>Game Played</td>
+                <td>כמות המשחקים ששוחקו</td>
+            </tr>
+            <tr>
+                <td>Wins</td>
+                <td>נצחונות</td>
+            </tr>
+            <tr>
+                <td>Lose</td>
+                <td>הפסדים</td>
+            </tr>
+            <tr>
+                <td>Win presentage</td>
+                <td>אחוז נצחונות</td>
+            </tr>
+            <tr>
+                <td>Minutes</td>
+                <td> ממוצע הנקודות של קבוצה </td>
+            </tr>
+            <tr>
+                <td>Points</td>
+                <td>ממוצע הנקודות של קבוצה</td>
+            <tr>
+                <td>Field Goal Made</td>
+                <td>כמות זריקות מוצלחות</td>
+            </tr>
+            <tr>
+                <td>Field Goal Attempted</td>
+                <td>כמות זריקות</td>
+            </tr>
+            <tr>
+                <td>Field Goal Presentage</td>
+                <td>אחוז זריקות מוצלחות</td>
+            </tr>
+            <tr>
+                <td>3 Points Made</td>
+                <td>כמות זריקות מוצלחות לשלוש נקודות</td>
+            </tr>
+            <tr>
+                <td>3 Points Attempted</td>
+                <td>כמות זריקות לשלוש נקודות</td>
+            </tr>
+            <tr>
+                <td>3 Points Presentage</td>
+                <td>אחוז זריקות מוצלחות לשלוש נקודות </td>
+            </tr>
+            <tr>
+                <td>Free Throw Made</td>
+                <td>זריקות עונשין מצלחות</td>
+            </tr>
+            <tr>
+                <td>Free Throw Attempted</td>
+                <td>כמות זריקות עונשין</td>
+            </tr>
+            <tr>
+                <td>Free Throw Presentage</td>
+                <td>אחוז זריקות מוצלחות מהעונשין</td>
+            </tr>
+            <tr>
+                <td>Offensive Rebounds</td>
+                <td>כדורים חוזרים בהתקפה</td>
+            </tr>
+            <tr>
+                <td>Deffensive Rebounds</td>
+                <td>כדורים חוזרים בהגנה</td>
+            </tr>
+            <tr>
+                <td>Rebounds</td>
+                <td>כדורים חוזרים</td>
+            </tr>
+            <tr>
+                <td>Assits</td>
+                <td>כמות אסיסטים למשחק</td>
+            </tr>
+            <tr>
+                <td>Turnovers</td>
+                <td>כמות איבודי כדור למשחק</td>
+            </tr>
+            <tr>
+                <td>Stills</td>
+                <td>חטיפות למשחק</td>
+            </tr>
+            <tr>
+                <td>Blocks</td>
+                <td>חסימות למשחק</td>
+            </tr>
+            <tr>
+                <td>Blocked Field Goal Attempts</td>
+                <td>מספר החסימות הממוצע שהקבוצה הנגדית ביצעה</td>
+            </tr>
+            <tr>
+                <td>Personal Fouls</td>
+                <td>מספר הפאולים שביצעה הקבוצה</td>
+            </tr>
+            <tr>
+                <td>Personal Fouls Drawn</td>
+                <td>מספר הפאולים שסחטת </td>
+            </tr>
+            <tr>
+                <td>Plus Minus</td>
+                <td> מראה את כמות ההפרש בה הקבוצה מנצחת או מפסידה</td>
+            </tr>
+            <tr>
+                <td>Season</td>
+                <td>עונת המשחק</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders">
+        <form method="post">
+            {{ form1.csrf_token }}
+            <input class="btn btn-success" type="submit" name="action" value="Expand">
+        </form>
+    </div>
+    <div class="col-md-5 my-grid-borders">
+        <form method="post">
+            {{ form2.csrf_token }}
+            <input class="btn btn-danger" type="submit" name="action" value="Collapse">
+        </form>
+    </div>
+</div>
+<div class="row my-grid-borders">
+    {{ raw_data_table | safe}}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,135 @@
+﻿{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="row my-grid-borders">
+    <p> Here I am going to put a general explanation about the Data</p>
+</div>
+<div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_one }} height="100" width="130"></div>
+<div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_two }} height="100" width="130"></div>
+<div class="row my-grid-borders">
+    <h2>NBA's finals Dataset Fields</h2>
+</div>
+<div class="row my-grid-borders">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Year</td>
+                <td class="heb"> עונת המשחק</td>
+            </tr>
+            <tr>
+                <td>Team</td>
+                <td>קבוצה</td>
+            </tr>
+            <tr>
+                <td>Game</td>
+                <td>מספר המשחק</td>
+            </tr>
+            <tr>
+                <td>Win</td>
+                <td>נצחון</td>
+            </tr>
+            <tr>
+                <td>Home</td>
+                <td>האם המשחק הוא משחק בית או חוץ </td>
+            </tr>
+            <tr>
+                <td>field gaol made</td>
+                <td> מספר הסלים למשחק</td>
+            </tr>
+            <tr>
+                <td>field goal attempted</td>
+                <td>מספר זריקות שנלקחו</td>
+            <tr>
+                <td>Field Goal presentage</td>
+                <td>כמות זריקות מוצלחות</td>
+            </tr>
+            <tr>
+                <td>transition points</td>
+                <td> כמות נקודות במתפרצת</td>
+            </tr>
+            <tr>
+                <td> transition points attempted</td>
+                <td>נקודות אפשריות במתפרצת</td>
+            </tr>
+            <tr>
+                <td>free throw made</td>
+                <td> זריקות עונשין מוצלחות</td>
+            </tr>
+            <tr>
+                <td>free throw Attempted</td>
+                <td>מספר זריקות העונשין</td>
+            </tr>
+            <tr>
+                <td> free throw Presentage</td>
+                <td>אחוז זריקות העונשין </td>
+            </tr>
+            <tr>
+                <td>offensive rebound</td>
+                <td>מספר ריבאונדים בהתקפה</td>
+            </tr>
+            <tr>
+                <td>deffensive rebound </td>
+                <td>מספר ריבאונדים בהגנה</td>
+            </tr>
+            <tr>
+                <td>total reabounds</td>
+                <td>כמות ריבאונדים כוללת</td>
+            </tr>
+            <tr>
+                <td>asists</td>
+                <td>כמות אסיסטים</td>
+            </tr>
+            <tr>
+                <td>steals</td>
+                <td>כמות חטיפות</td>
+            </tr>
+            <tr>
+                <td>blocks</td>
+                <td>כמות בלוקים</td>
+            </tr>
+            <tr>
+                <td>turnovers</td>
+                <td>כמות איבודים</td>
+            </tr>
+            <tr>
+                <td>personal fouls</td>
+                <td>עבירות שבוצעו</td>
+            </tr>
+            <tr>
+                <td>points</td>
+                <td>נקודות</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders">
+        <form method="post">
+            {{ form1.csrf_token }}
+            <input class="btn btn-success" type="submit" name="action" value="Expand">
+        </form>
+    </div>
+    <div class="col-md-5 my-grid-borders">
+        <form method="post">
+            {{ form2.csrf_token }}
+            <input class="btn btn-danger" type="submit" name="action" value="Collapse">
+        </form>
+    </div>
+</div>
+<div class="row my-grid-borders">
+    {{ raw_data_table | safe}}
+</div>
+
+
+{% endblock %}
