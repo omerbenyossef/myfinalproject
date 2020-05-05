@@ -19,3 +19,22 @@ class CollapseForm(FlaskForm):
 	name="Collapse"
 	value="Collapse"
 
+class NBA(FlaskForm):
+	teama = SelectField('Select a team:' , validators = [DataRequired] )
+	teamb = SelectField('Select a team:' , validators = [DataRequired] )
+	season = SelectField('Select season:' , validators = [DataRequired] )
+	subnmit = SubmitField('submit')
+
+
+
+
+
+
+class LoginFormStructure(FlaskForm):
+	username   = StringField('Username:  ' , validators = [DataRequired()])
+	password   = PasswordField('Password:  ' , validators = [DataRequired()])
+	submit = SubmitField('Submit')
+
+
+
+	

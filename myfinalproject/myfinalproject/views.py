@@ -39,12 +39,21 @@ from wtforms import ValidationError
 
 
 from myfinalproject.Models.QueryFormStructure import UserRegistrationFormStructure 
+from myfinalproject.Models.QueryFormStructure import LoginFormStructure
 
 from myfinalproject.Models.Forms import ExpandForm
 from myfinalproject.Models.Forms import CollapseForm
+from myfinalproject.Models.Forms import NBA
+
+import base64
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+
+
 
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
+
 
 ###from DemoFormProject.Models.LocalDatabaseRoutines import IsUserExist, IsLoginGood, AddNewUser 
 
@@ -189,6 +198,80 @@ def Register():
         year=datetime.now().year,
         repository_name='Pandas',
         )
+
+
+@app.route('/query' , methods = ['GET' , 'POST'])
+def query():
+
+    
+
+    form1 = NBA()
+    chart = 'static/images/chasestats.jpg'
+
+   
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/nba_team_stats_00_to_18.csv'))
+    l = list(set(df['TEAM'].tolist()))  
+    m = list(zip(l,l))
+    form1.teama.choices = m 
+    form1.teamb.choices = m 
+    l = list(set(df['SEASON'].tolist()))  
+    m = list(zip(l,l))
+    form1.season.choices = m
+
+
+
+
+    if request.method == 'POST':
+        teama = form1.teama.data
+        teamb = form1.teamb.data
+        season = form1.season.data
+        df = df[['SEASON','TEAM','WIN%','FG%','3P%','FT%']]
+        df = df.loc[df['SEASON']== season]
+        df = df.loc[(df['TEAM']== teama)|(df['TEAM']==teamb)]
+        df['WIN%'] = df['WIN%'].apply(lambda x:100*x)
+        df = df.drop('SEASON',1)
+        print (df)
+        df = df.set_index("TEAM")
+        df = df.transpose()
+        print (df)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        df.plot(ax = ax , kind = 'bar', figsize = (24, 8) , fontsize = 22 , grid = True)
+        chart = plot_to_img(fig)
+
+    
+    return render_template(
+        'query.html',
+        form1 = form1,
+        chart = chart
+    )
+
+def plot_to_img(fig):
+    pngImage = io.BytesIO()
+    FigureCanvas(fig).print_png(pngImage)
+    pngImageB64String = "data:image/png;base64,"
+    pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
+    return pngImageB64String
+
+
+
+@app.route('/Login', methods=['GET', 'POST'])
+def Login():
+    form = LoginFormStructure(request.form)
+    if (request.method == 'POST' and form.validate()):
+        if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
+            flash('You Successfully Login To The Website!')
+            return redirect('query')
+        else:
+            flash('Error In - Username and/or Password!!!')
+   
+    return render_template(
+        'Login.html', 
+        form=form, 
+        title='In This Page You Can Login To The Website:',
+        year=datetime.now().year,
+    )
+
 
 
 
