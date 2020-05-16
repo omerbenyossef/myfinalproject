@@ -56,6 +56,7 @@ bootstrap = Bootstrap(app)
 
 
 ###from DemoFormProject.Models.LocalDatabaseRoutines import IsUserExist, IsLoginGood, AddNewUser 
+### this is the home page.
 
 db_Functions = create_LocalDatabaseServiceRoutines() 
 
@@ -72,7 +73,7 @@ def home():
          message='My home page.'   
 
     )
-
+### contact page
 @app.route('/contact')
 def contact():
 
@@ -86,6 +87,8 @@ def contact():
         img_tichonet = '/static/images/tichonet.png',
         img_oran = '/static/images/contact.jpg'
     )
+
+### about page
 @app.route('/about')
 def about():
 
@@ -97,7 +100,7 @@ def about():
         year=datetime.now().year,
         img_tichonet = '/static/images/tichonet.png'
     )
-
+### data model page
 @app.route('/data_model')
 def data_model():
     """Renders the about page."""
@@ -108,16 +111,19 @@ def data_model():
         img_two = '/static/images/lebronandkobe.jpg'
 
     )
-
+### nba data page - in this page there are explanations about the data.
 @app.route('/data/nba' , methods = ['GET' , 'POST'])
 def nba():
 
     print("nba")
 
     """Renders the about page."""
+    
     form1 = ExpandForm()
+    #  the button expand is to open that data set on the site.
     form2 = CollapseForm()
-    # df = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\trump.csv'))
+    #  the button collapse os to close the data set on the site.
+
     df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/nba_team_stats_00_to_18.csv'))
     raw_data_table = ''
 
@@ -149,7 +155,6 @@ def nbafinals():
     """Renders the about page."""
     form1 = ExpandForm()
     form2 = CollapseForm()
-    # df = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\trump.csv'))
     df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/championsdata.csv'))
     raw_data_table = ''
 
@@ -175,7 +180,7 @@ def nbafinals():
 
 
     
-
+### the register page on the site - where you can register a new user.
 @app.route('/register', methods=['GET', 'POST'])
 def Register():
     form = UserRegistrationFormStructure(request.form)
@@ -199,7 +204,7 @@ def Register():
         repository_name='Pandas',
         )
 
-
+### the query page - this page allowing to investigate the database.
 @app.route('/query' , methods = ['GET' , 'POST'])
 def query():
 
@@ -254,7 +259,7 @@ def plot_to_img(fig):
     return pngImageB64String
 
 
-
+### login page - You can connect with your user and then investigate the database.
 @app.route('/Login', methods=['GET', 'POST'])
 def Login():
     form = LoginFormStructure(request.form)
