@@ -3,7 +3,7 @@
 {% block content %}
 
 <h2>{{ title }}</h2>
-<body style="background-color:aqua"
+<body style="background-color:aqua"> </body>
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
     {% for message in messages %}
@@ -112,14 +112,16 @@
 </form>
 
 <style>
-    td, tr, table {
+    td, tr, table 
+    {
         font-size: 22px
     }
 
-    h2 {
+    h2 
+    {
         position: relative;
         left: 450px;
     }
-</body>
+
 </style>
     {% endblock %}
